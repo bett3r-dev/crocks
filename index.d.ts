@@ -313,7 +313,7 @@ export type transformsType = {
   // tupleToArray: typeof tupleToArray
   // writerToPair: typeof writerToPair
 }
-export const transformers: transformsType
+export const transforms: transformsType
 
 //*******************************************
 // Combinators
