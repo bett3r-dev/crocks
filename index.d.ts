@@ -6,25 +6,25 @@
 // Crocks
 //*******************************************
 
-import Arrow from './types/Arrow'
-import Async from './types/Async'
-import Const from './types/Const'
-import Either from './types/Either'
-import Equiv from './types/Equiv'
-import Identity from './types/Identity'
-import IO from './types/IO'
-import List from './types/List'
-import Maybe from './types/Maybe'
-import Pair from './types/Pair'
-import Pred from './types/Pred'
-import Reader from './types/Reader'
-// import ReaderT from './Reader/types/ReaderT'
-import Result from './types/Result'
-import Star from './types/Star'
-import State from './types/State'
-// import Tuple from './types/Tuple'
-// import Unit from './types/Unit'
-import Writer from './types/Writer'
+import Arrow from './src/Arrow'
+import Async from './src/Async'
+import Const from './src/Const'
+import Either from './src/Either'
+import Equiv from './src/Equiv'
+import Identity from './src/Identity'
+import IO from './src/IO'
+import List from './src/List'
+import Maybe from './src/Maybe'
+import Pair from './src/Pair'
+import Pred from './src/Pred'
+import Reader from './src/Reader'
+// import ReaderT from './Reader/src/ReaderT'
+import Result from './src/Result'
+import Star from './src/Star'
+import State from './src/State'
+// import Tuple from './src/Tuple'
+// import Unit from './src/Unit'
+import Writer from './src/Writer'
 
 // export const Async:Async;
 export {
@@ -76,16 +76,16 @@ export const crocks: crocksType
 // Monoids
 //*******************************************
 
-import All from './types/All';
-import Any from './types/Any';
-import Assign from './types/Assign';
-import Endo from './types/Endo';
-import First from './types/First';
-import Last from './types/Last';
-import Max from './types/Max';
-import Min from './types/Min';
-import Prod from './types/Prod';
-import Sum from './types/Sum';
+import All from './src/All';
+import Any from './src/Any';
+import Assign from './src/Assign';
+import Endo from './src/Endo';
+import First from './src/First';
+import Last from './src/Last';
+import Max from './src/Max';
+import Min from './src/Min';
+import Prod from './src/Prod';
+import Sum from './src/Sum';
 export {
   All,
   Any,
@@ -116,27 +116,27 @@ export type monoidsType = {
 //*******************************************
 
 
-export * from './types/Pair/branch';
-export * from './types/Pair/fanout';
-export * from './types/Maybe/find';
-export * from './types/Maybe/getPath';
-export * from './types/Maybe/getProp';
-// export * from './types/Maybe/safe';
-export * from './types/Maybe/safeAfter';
-export * from './types/Maybe/safeLift';
-export * from './types/Pair/toPairs';
-export * from './types/Result/tryCatch';
+export * from './src/Pair/branch';
+export * from './src/Pair/fanout';
+export * from './src/Maybe/find';
+export * from './src/Maybe/getPath';
+export * from './src/Maybe/getProp';
+export * from './src/Maybe/safe';
+export * from './src/Maybe/safeAfter';
+export * from './src/Maybe/safeLift';
+export * from './src/Pair/toPairs';
+export * from './src/Result/tryCatch';
 
-import branch from './types/Pair/branch';
-import fanout from './types/Pair/fanout';
-import find from './types/Maybe/find';
-import getPath from './types/Maybe/getPath';
-import getProp from './types/Maybe/getProp';
-import safe from './types/Maybe/safe';
-import safeAfter from './types/Maybe/safeAfter';
-import safeLift from './types/Maybe/safeLift';
-import toPairs from './types/Pair/toPairs';
-import tryCatch from './types/Result/tryCatch';
+import branch from './src/Pair/branch';
+import fanout from './src/Pair/fanout';
+import find from './src/Maybe/find';
+import getPath from './src/Maybe/getPath';
+import getProp from './src/Maybe/getProp';
+import safe from './src/Maybe/safe';
+import safeAfter from './src/Maybe/safeAfter';
+import safeLift from './src/Maybe/safeLift';
+import toPairs from './src/Pair/toPairs';
+import tryCatch from './src/Result/tryCatch';
 
 export {
   branch,
@@ -151,7 +151,8 @@ export {
   tryCatch, 
 }
 
-import * as _helpers from './types/helpers'
+export * from './src/helpers'
+import * as _helpers from './src/helpers'
 export type helpersType = typeof _helpers & {
   branch: typeof branch
   fanout: typeof fanout
@@ -172,15 +173,15 @@ export const helpers:helpersType;
 // Point Free
 //*******************************************
 
-import evalWith from './types/State/evalWith';
-import execWith from './types/State/execWith';
-import fst from './types/Pair/fst';
-import log from './types/Writer/log';
-import nmap from './types/Tuple/nmap';
-import project from './types/Tuple/project';
-import race from './types/Async/race';
-import read from './types/Writer/read';
-import snd from './types/Pair/snd';
+import evalWith from './src/State/evalWith';
+import execWith from './src/State/execWith';
+import fst from './src/Pair/fst';
+import log from './src/Writer/log';
+import nmap from './src/Tuple/nmap';
+import project from './src/Tuple/project';
+import race from './src/Async/race';
+import read from './src/Writer/read';
+import snd from './src/Pair/snd';
 export {
   evalWith,
   execWith,
@@ -193,7 +194,8 @@ export {
   snd
 }
 
-import * as _pointfree from './types/pointfree';
+export * from './src/pointfree';
+import * as _pointfree from './src/pointfree';
 export type pointfreeType = typeof _pointfree &{
   evalWith: typeof evalWith
   execWith: typeof execWith
@@ -211,38 +213,38 @@ export const pointfree:pointfreeType;
 // Transforms
 //*******************************************
 
-// import arrayToList from './types/List/arrayToList';
-import asyncToPromise from './types/Async/asyncToPromise';
-import eitherToAsync from './types/Async/eitherToAsync';
-import eitherToFirst from './types/First/eitherToFirst';
-import eitherToLast from './types/Last/eitherToLast';
-import eitherToMaybe from './types/Maybe/eitherToMaybe';
-// import eitherToResult from './types/Result/eitherToResult';
-import firstToAsync from './types/Async/firstToAsync';
-import firstToEither from './types/Either/firstToEither';
-import firstToLast from './types/Last/firstToLast';
-import firstToMaybe from './types/Maybe/firstToMaybe';
-// import firstToResult from './types/Result/firstToResult';
-import lastToAsync from './types/Async/lastToAsync';
-import lastToEither from './types/Either/lastToEither';
-import lastToFirst from './types/First/lastToFirst';
-import lastToMaybe from './types/Maybe/lastToMaybe';
-// import lastToResult from './types/Result/lastToResult';
-// import listToArray from './types/List/listToArray';
-import maybeToArray from './types/Maybe/maybeToArray';
-import maybeToAsync from './types/Async/maybeToAsync';
-import maybeToEither from './types/Either/maybeToEither';
-import maybeToFirst from './types/First/maybeToFirst';
-import maybeToLast from './types/Last/maybeToLast';
-// import maybeToList from './types/List/maybeToList';
-// import maybeToResult from './types/Result/maybeToResult';
-import resultToAsync from './types/Async/resultToAsync';
-import resultToEither from './types/Either/resultToEither';
-import resultToFirst from './types/First/resultToFirst';
-import resultToLast from './types/Last/resultToLast';
-import resultToMaybe from './types/Maybe/resultToMaybe';
-// import tupleToArray from './types/Tuple/tupleToArray';
-// import writerToPair from './types/Pair/writerToPair;
+// import arrayToList from './src/List/arrayToList';
+import asyncToPromise from './src/Async/asyncToPromise';
+import eitherToAsync from './src/Async/eitherToAsync';
+import eitherToFirst from './src/First/eitherToFirst';
+import eitherToLast from './src/Last/eitherToLast';
+import eitherToMaybe from './src/Maybe/eitherToMaybe';
+// import eitherToResult from './src/Result/eitherToResult';
+import firstToAsync from './src/Async/firstToAsync';
+import firstToEither from './src/Either/firstToEither';
+import firstToLast from './src/Last/firstToLast';
+import firstToMaybe from './src/Maybe/firstToMaybe';
+// import firstToResult from './src/Result/firstToResult';
+import lastToAsync from './src/Async/lastToAsync';
+import lastToEither from './src/Either/lastToEither';
+import lastToFirst from './src/First/lastToFirst';
+import lastToMaybe from './src/Maybe/lastToMaybe';
+// import lastToResult from './src/Result/lastToResult';
+// import listToArray from './src/List/listToArray';
+import maybeToArray from './src/Maybe/maybeToArray';
+import maybeToAsync from './src/Async/maybeToAsync';
+import maybeToEither from './src/Either/maybeToEither';
+import maybeToFirst from './src/First/maybeToFirst';
+import maybeToLast from './src/Last/maybeToLast';
+// import maybeToList from './src/List/maybeToList';
+// import maybeToResult from './src/Result/maybeToResult';
+import resultToAsync from './src/Async/resultToAsync';
+import resultToEither from './src/Either/resultToEither';
+import resultToFirst from './src/First/resultToFirst';
+import resultToLast from './src/Last/resultToLast';
+import resultToMaybe from './src/Maybe/resultToMaybe';
+// import tupleToArray from './src/Tuple/tupleToArray';
+// import writerToPair from './src/Pair/writerToPair;
 
 export {
   // arrayToList,
@@ -318,22 +320,22 @@ export const transforms: transformsType
 //*******************************************
 // Combinators
 //*******************************************
-export * as combinators from './types/combinators'
-export * from './types/combinators'
+export * as combinators from './src/combinators'
+export * from './src/combinators'
 
 //*******************************************
 // Logic
 //*******************************************
-export * as logic from './types/logic'
-export * from './types/logic'
+export * as logic from './src/logic'
+export * from './src/logic'
 
 //*******************************************
 // Predicates
 //*******************************************
-export * as predicates from './types/predicates'
-export * from './types/predicates'
+export * as predicates from './src/predicates'
+export * from './src/predicates'
 
 //*******************************************
 // Internals
 //*******************************************
-export * from './types/internal';
+export * from './src/interfaces';
