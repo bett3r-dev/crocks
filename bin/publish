@@ -9,6 +9,6 @@ cp ../{.npmignore,package.json,AUTHORS,LICENSE,README.md} .
 cp -r ../types .
 cp ../index.d.ts .
 
-# npm publish
+npm publish
 
 cd ..
