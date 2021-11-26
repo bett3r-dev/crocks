@@ -4,6 +4,9 @@
   "description": "A collection of well known Algebraic Datatypes for your utter enjoyment.",
   "main": "./index.js",
   "types": "./index.d.ts",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
