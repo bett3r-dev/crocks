@@ -107,8 +107,7 @@ const transforms = {
   writerToPair: require('./Pair/writerToPair')
 }
 
-module.exports = Object.assign(
-  {},
+module.exports = {
   combinators,
   crocks,
   helpers,
@@ -125,4 +124,4 @@ module.exports = Object.assign(
   ...pointfree,
   ...predicates,
   ...transforms
-)
+}
