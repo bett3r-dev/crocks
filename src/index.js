@@ -116,5 +116,13 @@ module.exports = Object.assign(
   monoids,
   pointfree,
   predicates,
-  transforms
+  transforms,
+  ...combinators,
+  ...crocks,
+  ...helpers,
+  ...logic,
+  ...monoids,
+  ...pointfree,
+  ...predicates,
+  ...transforms
 )
