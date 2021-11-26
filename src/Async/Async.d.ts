@@ -11,7 +11,7 @@ declare function Async<R = any, L = Error>(fn: (reject: UnaryFunction<L>, resolv
 
 declare class Async<Right = any, Left = Error> implements Functor<Right>, Monad<Right>, Applicative<Right> {
     _type: Right;
-    map<RETURN=Right, R=Right>(fn: UnaryFunction<RETURN,R>): Async<R, Left>;
+    map<RETURN=Right, R=Right>(fn: UnaryFunction<RETURN,R>): Async<RETURN, Left>;
     chain<RETURN=Right, R=Right>(fn: UnaryFunction<Async<RETURN, Left>, R>): Async<RETURN, Left>;
     bichain<R= Right, L= Left>(fn1: UnaryFunction<Async<R,L>, L>, fn2: UnaryFunction<Async<R,L>, R>): Async<R,L>;
     ap(val: Async): Async<Right, Left>;
