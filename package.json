@@ -1,14 +1,14 @@
 {
-  "name": "crocks",
+  "name": "@bett3r-dev/crocks",
   "version": "0.12.4",
   "description": "A collection of well known Algebraic Datatypes for your utter enjoyment.",
   "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "setup": "node ./bin/setup.js",
     "preversion": "npm run build",
-    "postpublish": "npm run docs:deploy",
     "build:publish": "npm test && ./bin/publish",
     "build:dist": "webpack && uglifyjs build/dist/crocks.js -m -o build/dist/crocks.min.js",
     "build": "doctoc && rimraf build && buble -i src -o build && npm run build:dist",
@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evilsoft/crocks.git"
+    "url": "git+https://github.com/bett3r-dev/crocks.git"
   },
   "keywords": [
     "FP",
