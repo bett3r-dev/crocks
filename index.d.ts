@@ -332,3 +332,8 @@ export * from './types/logic'
 //*******************************************
 export * as predicates from './types/predicates'
 export * from './types/predicates'
+
+//*******************************************
+// Internals
+//*******************************************
+export * from './types/internal';
