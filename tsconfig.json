@@ -22,7 +22,6 @@
         "forceConsistentCasingInFileNames": true
     },
     "files": [
-        "index.d.ts",
-        "crocks-tests.ts"
+        "index.d.ts"
     ]
 }
