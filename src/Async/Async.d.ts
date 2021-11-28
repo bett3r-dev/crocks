@@ -16,7 +16,7 @@ declare class Async<Right = any, Left = Error> implements Functor<Right>, Monad<
     bichain<R= Right, L= Left>(fn1: UnaryFunction<Async<R,L>, L>, fn2: UnaryFunction<Async<R,L>, R>): Async<R,L>;
     ap(val: Async): Async<Right, Left>;
     alt<R= Right, L= Left>(val: Async<R,L>): Async<R,L>;
-    bimap<R= Right, L= Left>(fn1: UnaryFunction<L>, fn2: UnaryFunction<R>): Async<R, L>;
+    bimap<RETURNR=Right, RETURNL=Left, R= Right, L=Left>(fn1: UnaryFunction<RETURNL, L>, fn2: UnaryFunction<RETURNR, R>): Async<RETURNR, RETURNL>;
     coalesce<R= Right, L= Left>(fn1: UnaryFunction<L>, fn2: UnaryFunction<R>): Async<R,R>;
     swap<R= Right, L= Left>(fn1: UnaryFunction<L>, fn2: UnaryFunction<R>): Async<L,R>;
     race<R= Right, L= Left>(val: Async<R,L>): Async<R,L>;
