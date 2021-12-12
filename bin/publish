@@ -10,7 +10,4 @@ cp ../index.js .
 cp -r ../src/* .
 cp ../{.npmignore,package.json,AUTHORS,LICENSE,README.md} .
 
-cp -r ../types .
-cp ../index.d.ts .
-
 cd ..
