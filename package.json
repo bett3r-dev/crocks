@@ -8,7 +8,7 @@
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "setup": "node ./bin/setup.js",
-    "preversion": "npm run build",
+    "postversion": "npm run build",
     "build:publish": "./bin/publish",
     "build:dist": "webpack",
     "build": "doctoc && rimraf build && ./bin/publish && npm run build:dist",
