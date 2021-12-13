@@ -237,7 +237,7 @@ import maybeToEither from './Either/maybeToEither';
 import maybeToFirst from './First/maybeToFirst';
 import maybeToLast from './Last/maybeToLast';
 // import maybeToList from './src/List/maybeToList';
-// import maybeToResult from './src/Result/maybeToResult';
+import maybeToResult from './Result/maybeToResult';
 import resultToAsync from './Async/resultToAsync';
 import resultToEither from './Either/resultToEither';
 import resultToFirst from './First/resultToFirst';
@@ -271,7 +271,7 @@ export {
   maybeToFirst,
   maybeToLast,
   // maybeToList,
-  // maybeToResult,
+  maybeToResult,
   resultToAsync,
   resultToEither,
   resultToFirst,
