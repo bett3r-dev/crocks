@@ -1,6 +1,6 @@
 {
   "name": "@bett3r-dev/crocks",
-  "version": "0.12.5",
+  "version": "0.12.6",
   "description": "A collection of well known Algebraic Datatypes for your utter enjoyment.",
   "main": "./index.js",
   "types": "./index.d.ts",
