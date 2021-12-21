@@ -34,6 +34,8 @@ export declare interface Monad<T>{
 }
 export declare interface Applicative<T>{
     ap(val: Applicative<T>): Applicative<T>;
+    map(fn: mapFunction<T>): Functor<T>;
+    // of(val?: any): any;
 }
 export declare interface SemiGroup<T>{
     concat(other: SemiGroup<T>): SemiGroup<T>;
