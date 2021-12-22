@@ -103,6 +103,14 @@ const transforms = {
   writerToPair: require( './Pair/writerToPair' )
 }
 
+const core = {
+  equals: require( './core/equals' ),
+  flNames: require( './core/flNames' ),
+  implements: require( './core/implements' ),
+  inspect: require( './core/inspect' ),
+  isSameType: require( './core/isSameType' )
+}
+
 module.exports = {
   combinators,
   crocks,
@@ -112,6 +120,8 @@ module.exports = {
   pointfree,
   predicates,
   transforms,
+  core,
+  ...core,
   ...combinators,
   ...crocks,
   ...helpers,

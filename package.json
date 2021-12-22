@@ -2,8 +2,14 @@
   "name": "@bett3r-dev/crocks",
   "version": "0.12.6",
   "description": "A collection of well known Algebraic Datatypes for your utter enjoyment.",
-  "main": "./index.js",
-  "types": "./index.d.ts",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "AUTHORS",
+    "LICENSE",
+    "README.md",
+    "build"
+  ],
   "scripts": {
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",

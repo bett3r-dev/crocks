@@ -336,6 +336,34 @@ export * as predicates from './predicates'
 export * from './predicates'
 
 //*******************************************
+// Core
+//*******************************************
+
+import equals from './core/equals'
+import flNames from './core/flNames'
+import implements from './core/implements'
+import inspect from './core/inspect'
+import isSameType from './core/isSameType'
+
+export type coreType = {
+  equals: typeof equals
+  flNames: typeof flNames
+  implements: typeof implements
+  inspect: typeof inspect
+  isSameType: typeof isSameType
+}
+
+export {
+  equals,
+  flNames,
+  implements,
+  inspect,
+  isSameType
+}
+
+export const core: coreType
+
+//*******************************************
 // Internals
 //*******************************************
 export * from './interfaces';
