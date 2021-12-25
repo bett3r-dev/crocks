@@ -223,7 +223,13 @@ function Async( fn ) {
       }
 
       return Async( function( reject, resolve ) {
-        return fork( reject, compose( resolve, mapFn ))
+        return fork( reject, x => {
+          try{
+            resolve( mapFn( x ))
+          } catch( err ){
+            reject( err )
+          }
+        })
       })
     }
   }
@@ -237,7 +243,7 @@ function Async( fn ) {
       return Async( function( reject, resolve ) {
         return fork(
           compose( reject, l ),
-          compose( resolve, r )
+          x => { try{ return resolve( r( x )) } catch( err ){ reject( err ) } }
         )
       })
     }
