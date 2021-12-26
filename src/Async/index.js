@@ -320,15 +320,19 @@ function Async( fn ) {
         let cancel = unit
         let innerCancel = unit
         cancel = fork( reject, function( x ) {
-          const m = mapFn( x )
+          try{
+            const m = mapFn( x )
 
-          if( !isSameType( Async, m )) {
-            throw new TypeError(
-              `Async.${method}: Function must return another Async`
-            )
+            if( !isSameType( Async, m )) {
+              throw new TypeError(
+                `Async.${method}: Function must return another Async`
+              )
+            }
+
+            innerCancel = m.fork( reject, resolve )
+          } catch( err ) {
+            reject( err )
           }
-
-          innerCancel = m.fork( reject, resolve )
         })
         return once(() => innerCancel( cancel()))
       })
@@ -348,13 +352,17 @@ function Async( fn ) {
 
       function setInnerCancel( mapFn ) {
         return function( x ) {
-          const m = mapFn( x )
+          try{
+            const m = mapFn( x )
 
-          if( !isSameType( Async, m )) {
-            throw new TypeError( bichainErr )
+            if( !isSameType( Async, m )) {
+              throw new TypeError( bichainErr )
+            }
+
+            innerCancel = m.fork( rej, res )
+          } catch( err ){
+            console.warn( 'Async BiChain Is throwing inside of its proccess and not beign handled. This is just not rejecting the async. Error:', err )
           }
-
-          innerCancel = m.fork( rej, res )
         }
       }
 
