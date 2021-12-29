@@ -6,8 +6,6 @@ BUILD_DIR=build
 mkdir -p $BUILD_DIR
 cd $BUILD_DIR
 
-# cp ../index.js .
 cp -r ../src/* .
-# cp ../{.npmignore,package.json,AUTHORS,LICENSE,README.md} .
 
 cd ..
