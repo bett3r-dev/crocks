@@ -1,6 +1,6 @@
 /**
  * isDefined :: a -> Boolean
  */
-declare function isDefined(val: unknown): boolean;
+declare function isDefined<T>(val: T): boolean;
 
 export default isDefined;
