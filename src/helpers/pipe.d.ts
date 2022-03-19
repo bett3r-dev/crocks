@@ -1,6 +1,6 @@
 /**
  * pipe :: ((a -> b), ..., (y -> z)) -> a -> z
  */
-declare function pipe<A extends any[], Z>(f: (...args: A) => unknown, g: ReadonlyArray<(y: unknown) => Z>): Z;
+declare function pipe<Z>(...args: Function[]): Z;
 
 export default pipe;
