@@ -11,6 +11,7 @@
     "build"
   ],
   "scripts": {
+    "clean": "rm -rf build",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "setup": "node ./bin/setup.js",
